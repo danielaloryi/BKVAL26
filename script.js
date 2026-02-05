@@ -152,3 +152,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add smooth page scroll prevention
         document.body.style.overflow = 'hidden';
+        // Typing effect for final message
+function typeMessage() {
+    const message = "Happy Valentine's, my love 💜";
+    const submessage = "Can't wait to see you!";
+    const typingElement = document.getElementById('typingMessage');
+    const submessageElement = document.getElementById('submessage');
+    
+    let index = 0;
+    
+    function type() {
+        if (index < message.length) {
+            typingElement.textContent += message.charAt(index);
+            index++;
+            setTimeout(type, 100); // Speed of typing (lower = faster)
+        } else {
+            // Remove blinking cursor
+            setTimeout(() => {
+                typingElement.classList.add('done');
+                // Show submessage
+                submessageElement.textContent = submessage;
+                submessageElement.style.transition = 'opacity 1s ease';
+                submessageElement.style.opacity = '1';
+            }, 500);
+        }
+    }
+    
+    type();
+}
+
+// Trigger typing when page 5 loads
+const originalGoToPage = goToPage;
+goToPage = function(pageNum) {
+    originalGoToPage(pageNum);
+    if (pageNum === 5) {
+        setTimeout(typeMessage, 500);
+    }
+};

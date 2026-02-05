@@ -357,7 +357,7 @@
 
         .final-message {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-size: clamp(1.8rem, 4.8vw, 3.8rem);
             font-weight: 900;
             background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 100%);
             -webkit-background-clip: text;
@@ -559,3 +559,25 @@
                 gap: 1px;
             }
         }
+        /* Typing animation */
+.typing-text {
+    overflow: hidden;
+    border-right: 3px solid var(--accent);
+    white-space: nowrap;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--accent); }
+}
+
+.typing-text.done {
+    border-right: none;
+    animation: none;
+}
