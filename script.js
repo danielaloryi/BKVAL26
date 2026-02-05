@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (flippedTiles === 9) {
                     setTimeout(() => {
                         goToPage(5);
-                    }, 6000); // 3 second delay
+                    }, 9000); // 9 second delay
                 }
             }
         }
