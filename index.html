@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BK VAL '26 💜</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+     <link rel="stylesheet" href="style.css">
+</head>   
+  
+<body>
+    <!-- Floating orbs -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+
+    <!-- Sparkles container -->
+    <div class="sparkles"></div>
+
+    <!-- Page 1: First Password -->
+<div class="page active" id="page1">
+    <div class="password-container">
+        <div class="password-title">Enter Password</div>
+        
+        <div class="hint-container">
+            <button class="hint-toggle" onclick="toggleHint('hint1')">
+                <span class="hint-eye">👁️</span>
+                Click to view hint
+            </button>
+            <div class="hint-content" id="hint1">
+                <ul>
+                    <li>6 letter word</li>
+                    <li>Starts with the letter 'M'</li>
+                    <li>The LOYL</li>
+                </ul>
+            </div>
+        </div>
+
+        <input type="text" class="password-input" id="password1" placeholder="Enter password...">
+        <div class="error-message" id="error1">Ei, Kwerh!🤬</div>
+        <button class="submit-btn" onclick="checkPassword1()">Submit</button>
+    </div>
+</div>
+
+<!-- Page 2: Second Password -->
+<div class="page" id="page2">
+    <div class="password-container">
+        <div class="password-title">Confirm Your Identity</div>
+        
+        <div class="hint-container">
+            <button class="hint-toggle" onclick="toggleHint('hint2')">
+                <span class="hint-eye">👁️</span>
+                Click to view hint
+            </button>
+            <div class="hint-content" id="hint2">
+                <ul>
+                    <li>7 letter word</li>
+                    <li>Starts with the letter 'B'</li>
+                    <li>LOML</li>
+                </ul>
+            </div>
+        </div>
+
+        <input type="text" class="password-input" id="password2" placeholder="Enter password...">
+        <div class="error-message" id="error2">No idea who that is, please 🙏🏾</div>
+        <button class="submit-btn" onclick="checkPassword2()">Submit</button>
+    </div>
+</div>
+
+    <!-- Page 3: Valentine Question -->
+    <div class="page" id="page3">
+        <div class="valentine-container">
+            <div class="valentine-text">Will you be my<br>valentine, princess?</div>
+        </div>
+        <div class="button-container" style="margin-top: 60px;">
+            <button class="btn btn-yes" onclick="goToPage(4)">Yes! 💜</button>
+            <button class="btn btn-no" id="noBtn3">No</button>
+        </div>
+    </div>
+
+    <!-- Page 4: Memory Tiles -->
+    <div class="page tiles-page" id="page4">
+        <div class="tiles-container">
+            <!-- Tile 1 -->
+            <div class="tile" onclick="flipTile(this)">
+                <div class="tile-inner">
+                    <div class="tile-front">
+                        <div class="tile-front-content">
+                            <img src="MBTEST1.jpg" alt="Memory 1">
+                            <div class="tile-overlay">
+                                <div class="click-me-text">Click Me First 💜</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tile-back">
+                        <div class="tile-back-text">Remember our first date? Your smile lit up the whole room and I knew right then you were special.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tile 2 -->
+            <div class="tile" onclick="flipTile(this)">
+                <div class="tile-inner">
+                    <div class="tile-front">
+                        <div class="tile-front-content">
+                            <img src="MBTEST99.heic" alt="Memory 2">
+                            <div class="tile-overlay">
+                                <div class="click-me-text">Click Me 7TH 💜</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tile-back">
+                        <div class="tile-back-text">The way you laugh at my silly jokes - even the bad ones - makes my heart skip a beat every single time.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tile 3 -->
+            <div class="tile" onclick="flipTile(this)">
+                <div class="tile-inner">
+                    <div class="tile-front">
+                        <div class="tile-front-content">
+                            <img src="MBTEST901.jpg" alt="Memory 3">
+                            <div class="tile-overlay">
+                                <div class="click-me-text">Now Click Me 💜</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tile-back">
+                        <div class="tile-back-text">Your kindness and compassion inspire me to be a better person every day. You're truly one of a kind.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tile 4 -->
+            <div class="tile" onclick="flipTile(this)">
+                <div class="tile-inner">
+                    <div class="tile-front">
+                        <div class="tile-front-content">
+                            <img src="MBTEST2.jpg" alt="Memory 4">
+                            <div class="tile-overlay">
+                                <div class="click-me-text">Then Me 💜</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tile-back">
+                        <div class="tile-back-text">That moment we stargazed together and you pointed out constellations - I was only looking at you.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tile 5 -->
+            <div class="tile" onclick="flipTile(this)">
+                <div class="tile-inner">
+                    <div class="tile-front">
+                        <div class="tile-front-content">
+                            <img src="MBTEST5.jpg" alt="Memory 5">
+                            <div class="tile-overlay">
+                                <div class="click-me-text">Finallyyy! 💜</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tile-back">
+                        <div class="tile-back-text">Your strength and determination amaze me. You chase your dreams and never give up. I'm so proud of you.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tile 6 -->
+            <div class="tile" onclick="flipTile(this)">
+                <div class="tile-inner">
+                    <div class="tile-front">
+                        <div class="tile-front-content">
+                            <img src="MBTEST902.jpg" alt="Memory 6">
+                            <div class="tile-overlay">
+                                <div class="click-me-text">And Then Me 💜</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tile-back">
+                        <div class="tile-back-text">The little things you do - leaving sweet notes, remembering what I said - show me how much you care.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tile 7 -->
+            <div class="tile" onclick="flipTile(this)">
+                <div class="tile-inner">
+                    <div class="tile-front">
+                        <div class="tile-front-content">
+                            <img src="MBTEST3.jpg" alt="Memory 7">
+                            <div class="tile-overlay">
+                                <div class="click-me-text">Me Too 💜</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tile-back">
+                        <div class="tile-back-text">Dancing in the kitchen with you, even with no music, is my favorite kind of adventure.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tile 8 -->
+            <div class="tile" onclick="flipTile(this)">
+                <div class="tile-inner">
+                    <div class="tile-front">
+                        <div class="tile-front-content">
+                            <img src="MBTEST8.jpg" alt="Memory 8">
+                            <div class="tile-overlay">
+                                <div class="click-me-text">Almost There.. 💜</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tile-back">
+                        <div class="tile-back-text">Your intelligence and the way you see the world differently fascinates me. Every conversation is a gift.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tile 9 -->
+            <div class="tile" onclick="flipTile(this)">
+                <div class="tile-inner">
+                    <div class="tile-front">
+                        <div class="tile-front-content">
+                            <img src="MBTEST903.jpg" alt="Memory 9">
+                            <div class="tile-overlay">
+                                <div class="click-me-text">Hurryy! 💜</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tile-back">
+                        <div class="tile-back-text">With you, I've found my best friend, my partner, and my home. You complete me in every way.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 5: Final Message -->
+    <div class="page" id="page5">
+        <div class="final-container">
+            <div class="final-message">I love you baby 💜</div>
+            <div class="final-submessage">Can't wait to see youu!</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
