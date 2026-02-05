@@ -29,7 +29,7 @@ function checkPassword1() {
     if (input.value.toLowerCase() === 'mawuli') {
         // Show success message
         const container = document.querySelector('#page1 .password-container');
-        container.innerHTML = '<div class="success-message">Ofc it\'s me 💜</div>';
+        container.innerHTML = '<div class="success-message">Of course it\'s me 💜</div>';
         
         // Move to next page after 1.5 seconds
         setTimeout(() => {
@@ -52,7 +52,7 @@ function checkPassword2() {
     if (input.value.toLowerCase() === 'bakhita') {
         // Show success message
         const container = document.querySelector('#page2 .password-container');
-        container.innerHTML = '<div class="success-message">Perfect! 💜</div>';
+        container.innerHTML = '<div class="success-message">Of course it\'s you! 💜</div>';
         
         // Move to valentine question
         setTimeout(() => {
